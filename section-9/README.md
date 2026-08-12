@@ -56,7 +56,7 @@ magma model_XH.m > model_XH_output.txt
 
 ### `IsogGraphSubgroup(p,k,r)`
 
-For a prime \(p\) and integers \(k,r\) with
+For a prime $p$ and integers $k,r$ with
 ```math
 0\le r\le \left\lfloor \frac{k}{2}\right\rfloor,
 ```
