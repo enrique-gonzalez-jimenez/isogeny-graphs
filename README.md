@@ -74,31 +74,6 @@ isogeny-graphs/
 
 This SageMath code implements the algorithm in Theorem 8.1.
 
-Let $E/K$ be an elliptic curve satisfying $\mathrm{End}_K(E)\cong\mathbb{Z},$ and let $\rho_E:G_K\longrightarrow
-\mathrm{GL}_2(\widehat{\mathbb{Z}})$ be its adelic Galois representation.
-
-The mathematical input consists of:
-
-1. a positive integer $n$, equal to the level of $\rho_E$; and
-2. a subset $S\subseteq\mathrm{GL}_2(\mathbb{Z}/n\mathbb{Z})$ such that, with respect to some basis of $E[n]$, $\rho_{E,n}(G_K)\sim\langle S\rangle.$
-
-Here, $\sim$ denotes conjugacy in $\mathrm{GL}_2(\mathbb{Z}/n\mathbb{Z}).$
-
-From these data, the algorithm reconstructs the pointed edge-weighted graph $\bigl(\mathcal{G}(E/K),[E]_K\bigr).$
-
-The distinguished vertex $[E]_K$ corresponds to the original elliptic curve.
-
-The implementation determines the $p$-primary components of the isogeny graph
-from the corresponding local Galois images and reconstructs the full graph
-using the weak Cartesian product decomposition.
-
-See `section-8/README.md` for:
-
-- the precise input format;
-- the output conventions;
-- the representation of the distinguished vertex;
-- the graph-labeling conventions; and
-- worked examples.
 
 ### Section 9: Modular curves associated with isogeny graphs
 
@@ -114,10 +89,8 @@ with possible isogeny graphs. The corresponding modular curve is denoted by $X_H
 The code supports the calculations used in:
 
 - Lemma 9.10;
-- the classification of the genus-zero modular curves associated with
-  isogeny graphs;
-- the classification of the genus-one modular curves associated with
-  isogeny graphs; and
+- the classification of the genus-zero modular curves associated with isogeny graphs;
+- the classification of the genus-one modular curves associated with isogeny graphs; and
 - the computation of the models recorded in Table 5.
 
 The genus-zero modular curves associated with isogeny graphs consist of the
@@ -127,36 +100,12 @@ associated with $H_9^1, H_{16}^2, H_2^0\times H_9^1,$ and $H_{25}^1.$
 See `section-9/README.md` for detailed execution instructions and a
 description of the expected output.
 
-#### External Magma dependency
-
-The computations in this directory use David Zywina's `Modular` package:
-
-<https://github.com/davidzywina/Modular>
-
-This package provides Magma routines for computing modular forms and models
-of modular curves associated with subgroups of $\mathrm{GL}_2(\mathbb{Z}/N\mathbb{Z}).$
-
-The `Modular` package must be downloaded separately. It can be loaded in
-Magma using:
-
-```magma
-AttachSpec("/path/to/Modular/Modular.spec");
-```
-
-The external package is not redistributed in this repository. Users should
-consult its own repository for installation instructions, documentation,
-licensing information, and citation guidance.
-
-For reproducibility, the exact commit of `davidzywina/Modular` used in the
-computations should be recorded in `section-9/README.md`.
-
 ### Section 10: Explicit classification of genus-zero isogeny graphs
 
 **Directory:** `section-10/`  
 **Main file:** `section-10/genus_zero_classification.sage`
 
-The SageMath code in this directory supports the computations in Section 10
-and Appendix B.
+The SageMath code in this directory supports the computations in Section 10 and Appendix B.
 
 Section 10 completes the explicit classification of the isogeny graphs
 associated with genus-zero modular curves. The classical cases arising from
@@ -165,19 +114,7 @@ $X_0(n)$ are complemented by the four cases associated with $H_9^1,H_{16}^2,H_2^
 The corresponding values of $n$ are $n\in\{9,16,18,25\}.$
 
 For these values, the code constructs and verifies the extended parametrized
-families $\mathcal{C}_{n,m}^{1}(t,d)$
-
-appearing in Theorem 10.3 and Appendix B.
-
-Depending on the individual script, the computations verify:
-
-- the Weierstrass models of the parametrized elliptic curves;
-- the formulas for their $j$-invariants;
-- the relevant modular-polynomial identities;
-- the existence of the required isogenies;
-- the relations between the members of each parametrized family;
-- the resulting partial isogeny graphs; and
-- the formulas and models recorded in Appendix B.
+families $\mathcal{C}_{n,m}^{1}(t,d)$ appearing in Theorem 10.3 and Appendix B.
 
 See `section-10/README.md` for the correspondence between the scripts and the
 individual results and tables in the paper.
@@ -192,81 +129,6 @@ Appendix A, entitled *An LMFDB Zoo of Isogeny Graphs*.
 
 The computation accesses the LMFDB database of elliptic curves over number
 fields and examines the records in the `ec_nfcurves` collection.
-
-The program performs the following tasks:
-
-1. it iterates through the elliptic curves over number fields stored in
-   `ec_nfcurves`;
-2. it selects one representative from each isogeny class by imposing
-   `number = 1`;
-3. it restricts to the isogeny classes satisfying `cm_type != 1`;
-4. it reconstructs the edge-labeled isogeny graph from the corresponding
-   `isogeny_matrix`;
-5. it determines the distinct graph types occurring in the selected LMFDB
-   data;
-6. it selects an example isogeny class for each graph type;
-7. it stores the resulting classification for later offline use;
-8. it prints a human-readable summary;
-9. it generates an image for each graph type; and
-10. it produces a PDF report containing, for each graph type:
-    - the graph;
-    - an example elliptic curve;
-    - the LMFDB label of the example;
-    - a rendered Weierstrass equation;
-    - the number field over which the curve is defined; and
-    - the remaining classification data.
-
-#### Reconstruction from the isogeny matrix
-
-For each selected isogeny class, the field `isogeny_matrix` records the least
-degrees of cyclic isogenies between the curves in the class.
-
-The program reconstructs the prime-degree edge-labeled graph by retaining the
-matrix entries corresponding to prime-degree isogenies. An edge labeled by a
-prime $p$ represents an isogeny of degree $p$ defined over the corresponding
-number field.
-
-The resulting graphs are grouped according to edge-labeled graph
-isomorphism.
-
-#### Online and offline stages
-
-The database query is separated, as far as possible, from the formatting and
-visualization stages.
-
-The intended workflow is:
-
-```text
-LMFDB database query
-        |
-        v
-Saved offline classification
-        |
-        v
-Text summary, graph images, and PDF report
-```
-
-Once the classification has been saved locally, the textual summary, graph
-images, and PDF report can be regenerated without repeating the LMFDB query.
-
-The generated files are organized as follows:
-
-```text
-appendix-a/
-├── data/       Saved graph classification for offline use
-├── figures/    One image for each graph type
-└── output/     Textual summaries and the final PDF report
-```
-
-See `appendix-a/README.md` for:
-
-- the LMFDB access requirements;
-- the exact database query;
-- the fields extracted from each record;
-- the online and offline execution modes;
-- the generated data formats;
-- the output file names; and
-- the metadata required for reproducibility.
 
 ## Correspondence between the paper and the code
 
