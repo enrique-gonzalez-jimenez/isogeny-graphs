@@ -125,9 +125,11 @@ Here the product notation indicates the subgroup obtained by imposing the two lo
 
 The computation gives genus-1 models in the following three cases:
 
-- `27A1`: an elliptic curve with \(j=0\);
-- `32A1`: an elliptic curve with \(j=1728\);
-- `36C1`: an elliptic curve with \(j=0\).
+- `27A1`: an elliptic curve with $j=0$;
+- `32A1`: an elliptic curve with $j=1728$;
+- `36C1`: an elliptic curve with $j=0$.
 
-The case `49A3` has genus 3 and is represented by a plane quartic. The complete equations, fields of definition, and Magma output are recorded in [`model_XH_output.txt`](model_XH_output.txt).
+The case `49A3` has genus 3 and is represented by a plane quartic. 
+
+The complete equations, fields of definition, and Magma output are recorded in [`model_XH_output.txt`](model_XH_output.txt).
 
