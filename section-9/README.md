@@ -1,4 +1,4 @@
-# Section 9: Models of the modular curves \(X_0^r(p^k)\)
+# Section 9: Models of the modular curves $X_0^r(p^k)$
 
 This directory contains the Magma computations used in Section 9 of:
 
@@ -10,7 +10,7 @@ The script constructs the congruence subgroups associated with the isogeny graph
 
 ## Files
 
-- [`model_XH.m`](model_XH.m): Magma script that constructs the relevant subgroups of \(\operatorname{GL}_2(\mathbb Z/N\mathbb Z)\), creates the associated modular-curve records, and computes models using David Zywina's `Modular` package.
+- [`model_XH.m`](model_XH.m): Magma script that constructs the relevant subgroups of $\mathrm{GL}_2(\mathbb Z/N\mathbb Z)$, creates the associated modular-curve records, and computes models using David Zywina's `Modular` package.
 - [`model_XH_output.txt`](model_XH_output.txt): output obtained by running `model_XH.m` with Magma V2.29-1.
 
 ## Requirements
@@ -57,32 +57,22 @@ magma model_XH.m > model_XH_output.txt
 ### `IsogGraphSubgroup(p,k,r)`
 
 For a prime \(p\) and integers \(k,r\) with
-
-\[
+```math
 0\le r\le \left\lfloor \frac{k}{2}\right\rfloor,
-\]
+```
 
-this function returns the subgroup of \(\operatorname{GL}_2(\mathbb Z/p^k\mathbb Z)\) consisting of the invertible upper-triangular matrices
-
-\[
+this function returns the subgroup of $\mathrm{GL}_2(\mathbb Z/p^k\mathbb Z)$ consisting of the invertible upper-triangular matrices
+```math
 \begin{pmatrix}a&b\\0&c\end{pmatrix}
 \qquad\text{such that}\qquad
 c\equiv a\pmod {p^r}.
-\]
+```
 
-Equivalently, the condition is \(v_p(c-a)\ge r\).
+Equivalently, the condition is $v_p(c-a)\ge r$.
 
 ### `LiftGroups(G1,G2)`
 
-Given subgroups
-
-\[
-G_1\le \operatorname{GL}_2(\mathbb Z/N_1\mathbb Z),
-\qquad
-G_2\le \operatorname{GL}_2(\mathbb Z/N_2\mathbb Z),
-\]
-
-this function returns the subgroup of \(\operatorname{GL}_2(\mathbb Z/N_1N_2\mathbb Z)\) whose reductions modulo \(N_1\) and \(N_2\) belong to \(G_1\) and \(G_2\), respectively. It constructs the full inverse images under the two reduction maps and then intersects them.
+Given subgroups $G_1\le \mathrm{GL}_2(\mathbb Z/N_1\mathbb Z)$ and $G_2\le \mathrm{GL}_2(\mathbb Z/N_2\mathbb Z)$, this function returns the subgroup of $\mathrm{GL}_2(\mathbb Z/N_1N_2\mathbb Z)$ whose reductions modulo $N_1$ and $N_2$ belong to $G_1$ and $G_2$, respectively. It constructs the full inverse images under the two reduction maps and then intersects them.
 
 ### `SubgroupFiberProduct(s1,s2)`
 
@@ -104,7 +94,7 @@ This auxiliary function interprets an entry of the list `S`:
 
 ### `ModelXH(G)`
 
-Given a subgroup \(G\), this function:
+Given a subgroup $G$, this function:
 
 1. creates the modular-curve record with `CreateModularCurveRec`;
 2. prints its Cummins--Pauli name, genus, and field of definition;
@@ -118,16 +108,16 @@ The function returns the modular-curve record.
 
 The script treats the following cases:
 
-| Parameters | Group/graph notation | Cummins--Pauli name | Genus |
+| Parameters | Group notation | Cummins--Pauli name | Genus |
 |---|---:|---:|---:|
-| `[3,2,1]` | \(H_1(9)\) | `9B0` | 0 |
-| `[2,4,2]` | \(H_2(16)\) | `16C0` | 0 |
-| `[[2,1,0],[3,2,1]]` | \(H_0(2)\times H_1(9)\) | `18E0` | 0 |
-| `[5,2,1]` | \(H_1(25)\) | `25B0` | 0 |
-| `[3,3,1]` | \(H_1(27)\) | `27A1` | 1 |
-| `[2,5,2]` | \(H_2(32)\) | `32A1` | 1 |
-| `[[2,2,1],[3,2,1]]` | \(H_1(4)\times H_1(9)\) | `36C1` | 1 |
-| `[7,2,1]` | \(H_1(49)\) | `49A3` | 3 |
+| `[3,2,1]` | $H^1_9$ | `9B0` | 0 |
+| `[2,4,2]` | $H^2_{16}$ | `16C0` | 0 |
+| `[[2,1,0],[3,2,1]]` | $H^0_2\times H^1_9$ | `18E0` | 0 |
+| `[5,2,1]` | $H^1_{25}$ | `25B0` | 0 |
+| `[3,3,1]` | $H^1_{27}$ | `27A1` | 1 |
+| `[2,5,2]` | $H^2_{32}$ | `32A1` | 1 |
+| `[[2,2,1],[3,2,1]]` | $H^1_4\times H^1_9$ | `36C1` | 1 |
+| `[7,2,1]` | $H^1_{49}$ | `49A3` | 3 |
 
 Here the product notation indicates the subgroup obtained by imposing the two local conditions simultaneously via `SubgroupFiberProduct`.
 
@@ -140,23 +130,4 @@ The computation gives genus-1 models in the following three cases:
 - `36C1`: an elliptic curve with \(j=0\).
 
 The case `49A3` has genus 3 and is represented by a plane quartic. The complete equations, fields of definition, and Magma output are recorded in [`model_XH_output.txt`](model_XH_output.txt).
-
-## Reproducibility note
-
-The models returned by `FindModelOfXG` are defined over the number field stored in `X\`KG`. In the output, Magma may display the indeterminate in the defining polynomial as `$.1`; this is only Magma's default printed name for that polynomial-ring generator. Elements of the number field used in the equations are displayed using the name `a` assigned in `model_XH.m`.
-
-## Citation
-
-If you use these computations, please cite:
-
-```bibtex
-@article{BarriosGonzalezJimenezNovak2026,
-  author        = {Alexander J. Barrios and Enrique Gonz\'{a}lez-Jim\'{e}nez and Ivan Novak},
-  title         = {Isogeny graphs of elliptic curves in characteristic zero},
-  year          = {2026},
-  eprint        = {2608.02494},
-  archivePrefix = {arXiv},
-  primaryClass  = {math.NT}
-}
-```
 
