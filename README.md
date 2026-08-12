@@ -47,46 +47,23 @@ isogeny-graphs/
 ├── section-8/
 │   ├── README.md
 │   ├── image_to_graph_algorithm.sage
-│   └── examples/
 │
 ├── section-9/
 │   ├── README.md
 │   ├── model_XH.m
-│   ├── input/
-│   └── output/
 │
 ├── section-10/
 │   ├── README.md
 │   ├── genus_zero_classification.sage
-│   ├── verification/
-│   └── output/
 │
 ├── appendix-a/
-│   ├── README.md
-│   ├── ecnf_cmtype_not1_graph_types_clean.sage
-│   ├── data/
-│   ├── figures/
-│   └── output/
-│
-├── data/
-│   ├── README.md
-│   └── genus_zero_models/
-│
-└── docs/
-    ├── notation.md
-    └── reproducibility.md
+    ├── README.md
+    ├── ecnf_cmtype_not1_graph_types_clean.sage
+    ├── data/
+    ├── figures/
+    └── output/
+
 ```
-
-Each computational directory contains its own README describing:
-
-- the corresponding result in the paper;
-- the mathematical or database input;
-- the machine-readable input format;
-- the expected output;
-- the required software;
-- the external dependencies;
-- the command needed to run the computation; and
-- the information needed to reproduce the calculation.
 
 ## Computational components
 
