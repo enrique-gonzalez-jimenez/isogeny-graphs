@@ -1,0 +1,83 @@
+====================
+ [ 3, 2, 1 ] 
+-- -- -- -- -- -- -- --
+CPname=9B0
+Genus of X_G = 0
+K:G = Number Field with defining polynomial t^2 - t + 1 over the Rational Field
+Model: []
+====================
+ [ 2, 4, 2 ] 
+-- -- -- -- -- -- -- --
+CPname=16C0
+Genus of X_G = 0
+K:G = Number Field with defining polynomial t^2 + 1 over the Rational Field
+Model: []
+====================
+ [
+[ 2, 1, 0 ],
+[ 3, 2, 1 ]
+] 
+-- -- -- -- -- -- -- --
+CPname=18E0
+Genus of X_G = 0
+K:G = Number Field with defining polynomial t^2 + t + 1 over the Rational Field
+Model: []
+====================
+ [ 5, 2, 1 ] 
+-- -- -- -- -- -- -- --
+CPname=25B0
+Genus of X_G = 0
+K:G = Number Field with defining polynomial t^2 - t - 1 over the Rational Field
+Model: [
+(-a + 2)*x[1]^2 + (-a + 2)*x[1]*x[2] + (a - 2)*x[1]*x[3] + x[2]^2 + (a - 
+1)*x[2]*x[3] + x[3]^2
+]
+====================
+ [ 3, 3, 1 ] 
+-- -- -- -- -- -- -- --
+CPname=27A1
+Genus of X_G = 1
+K:G = Number Field with defining polynomial t^2 - t + 1 over the Rational Field
+Model: [
+-x[1]^3 + (4*a - 4)*x[1]^2*x[3] + 6*a*x[1]*x[3]^2 - 3*x[2]^3 + 3*x[3]^3
+]
+Model: Elliptic Curve defined by y^2 - 6561*y = x^3 - 14348907 over K
+j-invariant: 0
+====================
+ [ 2, 5, 2 ] 
+-- -- -- -- -- -- -- --
+CPname=32A1
+Genus of X_G = 1
+K:G = Number Field with defining polynomial t^2 + 1 over the Rational Field
+Model: [
+-x[1]^2*x[3] - 2*a*x[1]*x[2]^2 + x[3]^3
+]
+Model: Elliptic Curve defined by y^2 = x^3 + 4*x over K
+j-invariant: 1728
+====================
+ [
+[ 2, 2, 1 ],
+[ 3, 2, 1 ]
+] 
+-- -- -- -- -- -- -- --
+CPname=36C1
+Genus of X_G = 1
+K:G = Number Field with defining polynomial t^2 + t + 1 over the Rational Field
+Model: [
+a*x[1]^2*x[2] - a*x[1]^2*x[3] + (-a + 1)*x[1]*x[2]^2 - 2*a*x[1]*x[2]*x[3] + (a +
+1)*x[1]*x[3]^2 - x[2]^3 + (a - 1)*x[2]^2*x[3] + a*x[2]*x[3]^2
+]
+Model: Elliptic Curve defined by y^2 + (a + 2)*x*y + 3/4*y = x^3 + 1/4*(-3*a + 
+3)*x^2 - 3/8*a*x over K
+j-invariant: 0
+====================
+ [ 7, 2, 1 ] 
+-- -- -- -- -- -- -- --
+CPname=49A3
+Genus of X_G = 3
+K:G = Number Field with defining polynomial t^2 - t + 2 over the Rational Field
+Model: [
+x[1]^4 + (-4*a + 2)*x[1]^3*x[2] + 2*x[1]^3*x[3] - 9*x[1]^2*x[2]^2 + (-6*a + 
+9)*x[1]^2*x[2]*x[3] + 3*x[1]^2*x[3]^2 + (4*a - 2)*x[1]*x[2]^3 + (-6*a - 
+3)*x[1]*x[2]^2*x[3] + 3*x[1]*x[2]*x[3]^2 + 2*x[1]*x[3]^3 + x[2]^4 - 
+2*x[2]^3*x[3] + 3*x[2]^2*x[3]^2 - 2*x[2]*x[3]^3 + x[3]^4
