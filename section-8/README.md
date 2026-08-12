@@ -74,24 +74,6 @@ curve is not required.
 
 ## Output
 
-The output is the pointed edge-weighted graph
-
-```math
-\bigl(\mathcal{G}(E/K),[E]_K\bigr).
-```
-
-Its components have the following meaning:
-
-- each vertex represents a $K$-isomorphism class of elliptic curves
-  $K$-isogenous to $E$;
-- the distinguished vertex represents the original class $[E]_K$;
-- an edge labeled by a prime $p$ represents a $K$-rational isogeny of degree
-  $p$; and
-- the position of the distinguished vertex records the location of $E$ inside
-  its isogeny class.
-
-Thus, the output is a pointed graph rather than only an unpointed graph type.
-
 
 ## Requirements
 
