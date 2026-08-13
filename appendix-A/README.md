@@ -1,3 +1,59 @@
+# Appendix A: An LMFDB Zoo of Isogeny Graphs
+
+This directory contains the SageMath code and derived data used to produce
+Appendix A of the paper
+
+> Alexander J. Barrios, Enrique González-Jiménez, and Ivan Novak,  
+> *Isogeny Graphs of Elliptic Curves in Characteristic Zero*,  
+> arXiv:2608.02494 (2026).
+
+- **Paper:** <https://arxiv.org/abs/2608.02494>
+- **Main repository:** <https://github.com/enrique-gonzalez-jimenez/isogeny-graphs>
+- **LMFDB:** <https://www.lmfdb.org/>
+
+## Purpose
+
+Appendix A provides one example from the LMFDB for every isogeny graph type
+found among the elliptic curves over number fields currently stored in the
+database.
+
+The code in this directory:
+
+1. queries the LMFDB collection of elliptic curves over number fields;
+2. selects one curve from each isogeny class;
+3. applies the condition `cm_type != 1`;
+4. reconstructs the labeled isogeny graph from the corresponding
+   `isogeny_matrix`;
+5. classifies the distinct edge-weighted graph types;
+6. selects an example for each graph type;
+7. stores the classification for offline use;
+8. prints a human-readable summary;
+9. generates one image for each graph type; and
+10. produces a PDF report containing the graphs and their associated examples.
+
+## Main file
+
+```text
+ecnf_cmtype_not1_graph_types_clean.sage
+```
+
+The program is written for SageMath and uses the LMFDB database
+infrastructure.
+
+
+## Table 9: A small zoo of isogeny configurations
+
+The following table reproduces Table 9 of the paper. It gives one elliptic
+curve for every isogeny graph type appearing in the LMFDB.
+
+The columns have the following meanings:
+
+- **Isogeny label:** label of the edge-weighted isogeny graph;
+- **Size:** number of vertices in the graph, equivalently the number of $K$-isomorphism classes in the isogeny class;
+- **Degree:** isogeny class degree;
+- **LMFDB label:** an example elliptic curve realizing the graph. It is a direct link to the corresponding elliptic curve.
+
+
 | isogeny label | size | degree | LMFDB label |
 |---|---:|---:|---:|
 | `1.0` | 1 | 1 | [`2.0.1016.1-9.2-c1`](https://www.lmfdb.org/EllipticCurve/2.0.1016.1/9.2/c) |
