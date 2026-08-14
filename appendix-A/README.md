@@ -1,6 +1,6 @@
 # Appendix A: An LMFDB Zoo of Isogeny Graphs
 
-This repository contains the computations for **Appendix A: An LMFDB Zoo of Isogeny Graphs** in:
+This directory contains the SageMath code and derived data used to produce Appendix A of the paper
 
 > Alexander J. Barrios, Enrique Gonzalez-Jimenez, and Ivan Novak,  
 > *Isogeny Graphs of Elliptic Curves in Characteristic Zero*,  
