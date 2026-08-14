@@ -40,7 +40,7 @@ size, degree, LMFDB_label
 ## Main file
 
 ```text
-ecnf_cmtype_not1_graph_types_clean.sage
+lmfdb_isogeny_lmfdb_zoo.sage
 ```
 
 The program is written for SageMath and uses the LMFDB database
