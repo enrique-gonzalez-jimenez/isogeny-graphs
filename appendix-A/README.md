@@ -8,7 +8,8 @@ This directory contains the SageMath code and derived data used to produce Appen
 
 - **Paper:** https://arxiv.org/abs/2608.02494
 - **Repository:** https://github.com/enrique-gonzalez-jimenez/isogeny-graphs
-
+- **LMFDB:** <https://www.lmfdb.org/>
+  
 ## Description
 
 The SageMath script queries the LMFDB database for isogeny classes of elliptic curves defined over `Q` and over number fields, subject to the condition
