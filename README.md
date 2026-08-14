@@ -27,8 +27,6 @@ with certain subgroups of $\mathrm{GL}_2(\widehat{\mathbb{Z}}).$
 This repository contains SageMath and Magma code used to perform, reproduce,
 and verify computations appearing in:
 
-- Section 8: determining the isogeny graph from the adelic Galois
-  representation;
 - Section 9: modular curves associated with isogeny graphs;
 - Section 10: explicit classification of genus-zero isogeny graphs;
 - Appendix A: an LMFDB zoo of isogeny graphs; and
