@@ -38,13 +38,6 @@ and verify computations appearing in:
 
 The principal correspondence is as follows.
 
-### Section 8
-
-`section-8/image_to_graph_algorithm.sage`
-
-implements the algorithm in Theorem 8.1 and determines the pointed isogeny
-graph from the image of the adelic Galois representation.
-
 ### Section 9
 
 `section-9/model_XH.m`
