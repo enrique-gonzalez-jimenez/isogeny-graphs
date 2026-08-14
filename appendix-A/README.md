@@ -143,3 +143,7 @@ The columns have the following meanings:
 | `4.1-3.0-5.0` | 16 | 60 | [`4.4.3600.1-1.1-a1`](https://www.lmfdb.org/EllipticCurve/4.4.3600.1/1.1/a) |
 | `16.1-7.0` | 16 | 112 | [`4.4.12544.1-1.1-a1`](https://www.lmfdb.org/EllipticCurve/4.4.12544.1/1.1/a) |
 | `8.1-9.0` | 18 | 72 | [`4.4.2304.1-1.1-a1`](https://www.lmfdb.org/EllipticCurve/4.4.2304.1/1.1/a) |
+
+
+
+
