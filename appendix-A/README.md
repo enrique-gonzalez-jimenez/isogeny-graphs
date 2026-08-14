@@ -3,7 +3,7 @@
 This directory contains the SageMath code and derived data used to produce Appendix A of the paper
 
 > Alexander J. Barrios, Enrique Gonzalez-Jimenez, and Ivan Novak,  
-> *Isogeny Graphs of Elliptic Curves in Characteristic Zero*,  
+> *Isogeny graphs of elliptic curves in characteristic zero*,  
 > arXiv:2608.02494 (2026).
 
 - **Paper:** https://arxiv.org/abs/2608.02494
